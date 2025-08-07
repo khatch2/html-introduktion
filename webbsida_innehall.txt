@@ -1,0 +1,32 @@
+
+Välkommen till Webbutbildningen
+
+Webbutbildningen
+
+En introduktion till HTML och CSS
+
+Introduktion
+Verktyg
+Kontakt
+
+Introduktion till webbutveckling
+
+Här lär du dig grunderna i HTML, CSS och hur webbsidor är uppbyggda.
+
+HTML, eller HyperText Markup Language, används för att strukturera innehållet på webbsidor. Du får lära dig hur man skapar rubriker, stycken, listor och länkar som ger en tydlig och organiserad layout.
+
+CSS, eller Cascading Style Sheets, används för att styla HTML-element. Du får kunskap om hur färger, typsnitt, marginaler och layoutsystem som flexbox och grid används för att skapa visuellt tilltalande webbsidor.
+
+Utöver kodningen får du också förståelse för webbens grundläggande arkitektur – hur servrar och webbläsare kommunicerar, vad en DOM är, och hur responsiv design fungerar för att anpassa sidor till olika skärmstorlekar.
+
+
+Rekommenderade verktyg
+Visual Studio Code
+Google Chrome
+Live Server (tillägg till VS Code)
+
+Kontakt
+Har du frågor? Kontakta oss på
+webbutbildning@example.com
+
+© 2025 Webbutbildningen. Alla rättigheter förbehållna.
