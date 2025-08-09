@@ -1,0 +1,74 @@
+/* Snygg layout för recipe page */
+.exercise-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2rem 2.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+.exercise-container h1, .exercise-container h2, .exercise-container h3 {
+  color: #007acc;
+  margin-top: 0;
+}
+.solution {
+  background: #f3f8fc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.solution h3 {
+  color: #005fa3;
+}
+.test-result {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+.pass, .fail {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin: 0.25rem 0;
+  font-weight: 500;
+}
+.pass {
+  background: #eafbe7;
+  color: #1EE134;
+  border: 1px solid #b6e6b0;
+}
+.fail {
+  background: #fdeaea;
+  color: #E1341E;
+  border: 1px solid #f5bcbc;
+}
+img {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  margin-bottom: 1rem;
+}
+ul {
+  margin-bottom: 1rem;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  padding: 1rem;
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+button {
+  background: #007acc;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 1rem 0;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #005fa3;
+}
