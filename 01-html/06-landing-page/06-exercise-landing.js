@@ -1,11 +1,17 @@
 const results = [];
 
 function testLanding() {
+  // Testa endast inom första övnings-sektionen (inte .solution)
+  const targetSection =
+    document.querySelector('.exercise-container > section:not(.solution)') ||
+    document.querySelector('section') ||
+    document.createElement('div');
+
   // Testa att det finns en h1, minst en p, en img och en button
-  const h1 = document.querySelectorAll('h1');
-  const p = document.querySelectorAll('p');
-  const img = document.querySelectorAll('img');
-  const button = document.querySelectorAll('button');
+  const h1 = targetSection.querySelectorAll('h1');
+  const p = targetSection.querySelectorAll('p');
+  const img = targetSection.querySelectorAll('img');
+  const button = targetSection.querySelectorAll('button');
   if (h1.length === 1) {
     results.push('<div class="pass">✔️ Hittade huvudrubrik (h1)</div>');
   } else {
