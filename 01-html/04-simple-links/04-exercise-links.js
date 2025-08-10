@@ -15,7 +15,13 @@ function testLinks() {
       if (!link.getAttribute('href')) missingHref++;
     });
     if (missingHref === 0) {
-      results.push('<div class="pass">✔️ Alla länkar har href-attribut</div>');
+      // Kontrollera även att länktext inte är tom
+      const emptyText = Array.from(links).filter(a => !a.textContent.trim()).length;
+      if (emptyText === 0) {
+        results.push('<div class="pass">✔️ Alla länkar har href och text</div>');
+      } else {
+        results.push(`<div class="fail">❌ ${emptyText} länkar saknar text</div>`);
+      }
     } else {
       results.push(`<div class="fail">❌ ${missingHref} länkar saknar href-attribut</div>`);
     }

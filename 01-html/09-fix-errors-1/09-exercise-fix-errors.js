@@ -25,13 +25,14 @@ const results = [];
       results.push('<div class="fail">❌ h1 finns fler än en gång i första section</div>');
     }
 
-    // p: minst en, första med innehåll
+    // p: minst en och inga tomma
     if (TU.hasPair(section, "p")) {
-      const pInner = TU.firstPairInner(section, "p");
-      if (TU.stripTags(pInner).length > 0) {
-        results.push('<div class="pass">✔️ p finns och har innehåll</div>');
+      const pPairs = section.match(/<p\b[\s\S]*?<\/p>/gi) || [];
+      const emptyCount = pPairs.filter(p => TU.stripTags(p).length === 0).length;
+      if (emptyCount === 0) {
+        results.push('<div class="pass">✔️ p-taggar har start-/sluttagg och innehåll</div>');
       } else {
-        results.push('<div class="fail">❌ p saknar innehåll</div>');
+        results.push(`<div class="fail">❌ ${emptyCount} p-taggar saknar innehåll</div>`);
       }
     } else {
       results.push('<div class="fail">❌ p saknas i första section</div>');
