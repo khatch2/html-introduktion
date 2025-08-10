@@ -8,15 +8,17 @@ function testLinks() {
   } else {
     results.push('<div class="fail">❌ Minst tre länkar krävs</div>');
   }
-  // Testa att alla länkar har href
-  let missingHref = 0;
-  links.forEach(link => {
-    if (!link.getAttribute('href')) missingHref++;
-  });
-  if (missingHref === 0) {
-    results.push('<div class="pass">✔️ Alla länkar har href-attribut</div>');
-  } else {
-    results.push(`<div class="fail">❌ ${missingHref} länkar saknar href-attribut</div>`);
+  // Testa att alla länkar har href (endast om minst en länk finns)
+  if (links.length > 0) {
+    let missingHref = 0;
+    links.forEach(link => {
+      if (!link.getAttribute('href')) missingHref++;
+    });
+    if (missingHref === 0) {
+      results.push('<div class="pass">✔️ Alla länkar har href-attribut</div>');
+    } else {
+      results.push(`<div class="fail">❌ ${missingHref} länkar saknar href-attribut</div>`);
+    }
   }
 }
 
