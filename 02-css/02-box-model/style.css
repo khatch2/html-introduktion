@@ -1,0 +1,28 @@
+body {
+    background-color: #344e41;
+    color: #fefae0;
+}
+
+section {
+    background-color: #588157;
+    border: 1px solid #fefae0;
+    padding: 1rem;
+    margin: 3rem;
+}
+
+div {
+    height: 50px;
+}
+
+#box-one {
+    background-color: #264653;
+}
+#box-two {
+    background-color: #e9c46a;
+    color: #231942;
+    text-align: center;
+}
+#box-three {
+    background-color: #e76f51;
+    text-align: right;
+}
