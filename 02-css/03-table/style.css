@@ -1,0 +1,48 @@
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+  padding: 2rem;
+}
+
+h1 {
+  margin: 0 0 1rem 0;
+  color: #1e3a8a; /* deep blue */
+}
+
+/* Table styles (beginner friendly) */
+table {
+  width: 100%;
+  border-collapse: collapse; /* single borders */
+  background: #ffffff; /* white table background */
+  border: 1px solid #e5e7eb; /* light border around table */
+}
+
+thead th {
+  background: #e0f2fe; /* light sky blue */
+  color: #0c4a6e; /* dark teal text */
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 2px solid #bae6fd;
+}
+
+tbody td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #f1f5f9; /* row separators */
+}
+
+/* Zebra rows for readability */
+tbody tr:nth-child(odd) {
+  background: #f8fafc; /* very light gray-blue */
+}
+
+/* First column styling */
+tbody td:first-child {
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Row hover (optional) */
+tbody tr:hover {
+  background: #eff6ff; /* light indigo highlight */
+}
