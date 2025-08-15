@@ -1,0 +1,22 @@
+body {
+    background-color: #003049;
+}
+h3 {
+    color: #8ecae6;
+    margin-bottom: 0;
+}
+
+ul {
+    list-style: none;
+    border-left: 3px solid #8ecae6;
+    padding-left: 0.5rem;
+}
+
+li {
+    padding: 0.3rem 0.5rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
