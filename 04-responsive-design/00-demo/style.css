@@ -11,9 +11,17 @@
   --color-accent-gold: goldenrod;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
+
+  box-sizing: border-box;
 }
 .container {
   border: 1px solid var(--color-accent-gold);
@@ -29,7 +37,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .item {
@@ -44,16 +52,32 @@ body {
 }
 
 .item-1 {
-  flex: 1;
   align-self: flex-end;
+  flex: 1;
 }
 .item-2 {
-  flex: 2;
+  flex: 5;
   align-self: flex-start;
 }
 .item-3 {
-  /* flex: 2; */
+  flex: 3;
   align-self: center;
+}
+
+.child-container {
+  display: flex;
+  background-color: var(--color-accent-gold);
+  color: var(--color-bg);
+  gap: 0.3rem;
+}
+
+.child {
+  border: 3px solid var(--color-accent-warm);
+}
+
+.child-1,
+.child-2 {
+  flex: 1;
 }
 
 /* 
