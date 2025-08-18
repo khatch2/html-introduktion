@@ -1,25 +1,138 @@
+/* 
+<nav>
+    <ul>
+        <li>Menu</li>
+        <li>[LOGO]</li>
+        <li><button>Sign in</button></li>
+    </ul>
+</nav> 
+*/
+
 body {
-  width: 100vw;
-}
-nav {
-  width: 100%;
-}
-nav > ul {
-  padding: 0.5rem 1rem;
-  margin: 0;
-
-  display: flex;
-  /* align-items: center; */
-  gap: 1rem;
-  justify-content: space-around;
-  list-style: none;
-}
-
-nav li {
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  color: whitesmoke;
+}
+
+main {
+  padding: 0 24px;
+}
+
+section {
+  color: black;
+  /* background-color: blueviolet; */
 }
 
 .logo {
+  height: 32px;
+  width: 32px;
+  background-color: whitesmoke;
+  border-radius: 60rem;
+  padding: 0.5rem;
+}
+
+nav > ul {
+  background-color: #222;
+  height: 66.5px;
+
+  display: flex;
+
+  justify-content: space-around;
+  align-items: center;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* <section class="hero-section">
+<h1>Build and ship software on a single, collaborative platform</h1>
+<p>
+    Join the world’s most widely adopted AI-powered developer platform.
+</p>
+</section> */
+
+.hero-section {
   background-color: aquamarine;
-  height: 40px;
+  padding: 0 24px;
+
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 36px;
+}
+.hero-section p {
+  font-size: 18px;
+
+  margin: 20x 0 0;
+  padding-bottom: 20px;
+}
+
+/* <section class="sign-up">
+<div>
+    <input type="text" placeholder="Enter your email" />
+    <button>Sign up for GitHub</button>
+</div>
+<div>
+    <button>Try GitHub Copilot</button>
+</div>
+</section> */
+
+.sign-up {
+  background-color: burlywood;
+  border-radius: 0.5rem;
+}
+
+button {
+  padding: 6px 28px;
+  color: whitesmoke;
+  border-radius: 0.3rem;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* 
+class namn:
+sign-up-btn, ljusgrön / neon
+try-copilot-btn, mörkblå
+ */
+
+.sign-up-btn {
+  background-color: lightgreen;
+  color: #222;
+}
+
+input {
+  padding: 18px 12px 0 18px;
+}
+
+.try-copilot-btn {
+  background-color: darkblue;
+  width: 85%;
+}
+
+.sign-up-container {
+  /* border: #222 3px solid; */
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+}
+
+.sign-up-trypcopilot {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 18px 0;
+}
+
+.sign-in-btn {
+  padding: 4px 12px;
+  color: black;
+  border-radius: 0.3rem;
+  font-weight: 500;
 }
