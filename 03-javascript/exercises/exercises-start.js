@@ -1,4 +1,4 @@
-// JavaScript-övningar för Java 23
+// JavaScript-övningar för Java 24
 
 // Del 1: Grundläggande övningar
 
