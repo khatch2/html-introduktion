@@ -8,29 +8,22 @@
   </head>
   <body>
     <h1>Flexbox</h1>
-    <style>
-      .container {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .child-container {
-        display: flex;
-      }
-    </style>
     <section class="container">
-      <div>Hej</div>
-      <div class="child-container">
-        <div>111</div>
-        <div>222</div>
-        <div>333</div>
+      <div class="item item-1">Låda 1</div>
+      <div class="item item-2 child-container">
+        <div class="child child-1">Barn 1</div>
+        <div class="child child-2">Barn 2</div>
       </div>
-      <div>Dig</div>
+      <div class="item item-3">Låda 3</div>
     </section>
   </body>
 </html>
+
+<div class="child-container">
+  <div>111</div>
+  <div>222</div>
+  <div>333</div>
+</div>
 
 <!-- <section class="container flex grid">
       <div class="item item-1">Låda 1</div>

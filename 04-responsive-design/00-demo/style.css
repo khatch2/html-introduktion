@@ -31,18 +31,16 @@ body {
   border: 1px solid var(--color-accent-gold);
   height: 500px;
   width: 500px;
-}
 
-/* 
-  FLEXBOX
-*/
-
-.flex {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
+
+/* 
+  FLEXBOX
+*/
 
 .item {
   height: 100px;
@@ -57,7 +55,7 @@ body {
 
 .item-1 {
   align-self: flex-end;
-  flex: 1;
+  flex-shrink: 1;
 }
 .item-2 {
   flex: 5;
@@ -65,15 +63,15 @@ body {
 }
 .item-3 {
   flex: 3;
-  align-self: center;
+  align-self: flex-end;
 }
 
-/* .child-container {
+.child-container {
   display: flex;
   background-color: var(--color-accent-gold);
   color: var(--color-bg);
   gap: 0.3rem;
-} */
+}
 
 .child {
   border: 3px solid var(--color-accent-warm);
