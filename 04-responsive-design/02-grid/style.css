@@ -2,7 +2,40 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 32px;
+  gap: 21px;
+
+  /* grid-template-areas:
+    "card1 card3 card5"
+    "card4 card2 card6"; */
+}
+.card-1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  /* grid-area: card1; */
+}
+.card-2 {
+  grid-column: 2 / 4;
+  /* grid-area: card2; */
+}
+.card-3 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  /* grid-area: card3; */
+}
+.card-4 {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+  /* grid-area: card4; */
+}
+.card-5 {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+  /* grid-area: card5; */
+}
+.card-6 {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  /* grid-area: card6; */
 }
 
 .card {
