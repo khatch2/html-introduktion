@@ -4,14 +4,23 @@
 
 // 1. Skriv ut en hälsning
 // Skriv ett program som skriver ut "Hej världen!" till konsolen.
+console.log("Hej världen!");
 
 // 2. Skapa en variabel och tilldela ett värde
 // Skapa en variabel `firstName` och tilldela den ditt namn. Skriv ut variabeln till konsolen.
+let firstName = "Johan"
+console.log(firstName)
 
+// firstName = "Charles"
+// console.log(firstName)
 
 // 3. Använd en if-sats
 // Skapa en variabel `age`. Om åldern är över 18, skriv ut "Du är vuxen".
-
+if (firstName === "Johan") {
+    console.log("namnet är,", firstName)
+} else {
+    console.log(false)
+}
 
 // 4. For-loop som räknar till 10
 // Skriv en for-loop som skriver ut siffrorna 1 till 10.
