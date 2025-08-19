@@ -86,32 +86,26 @@ nav > ul {
   border-radius: 0.5rem;
 }
 
-button {
+.button {
   padding: 6px 28px;
+  background-color: #222;
   color: whitesmoke;
   border-radius: 0.3rem;
   font-size: 18px;
   font-weight: 500;
 }
 
-/* 
-class namn:
-sign-up-btn, ljusgrön / neon
-try-copilot-btn, mörkblå
- */
-
-.sign-up-btn {
+.button__lightgreen {
   background-color: lightgreen;
   color: #222;
+}
+.button__darkblue {
+  background-color: darkblue;
+  width: 85%;
 }
 
 input {
   padding: 18px 12px 0 18px;
-}
-
-.try-copilot-btn {
-  background-color: darkblue;
-  width: 85%;
 }
 
 .sign-up-container {
@@ -135,4 +129,43 @@ input {
   color: black;
   border-radius: 0.3rem;
   font-weight: 500;
+}
+
+@media (min-width: 500px) {
+  body {
+    background-color: darkgoldenrod;
+  }
+}
+
+@media (min-width: 800px) {
+  body {
+    background-color: darkcyan;
+  }
+
+  .sign-up-container {
+    flex-direction: row;
+
+    justify-content: center;
+
+    gap: 20px;
+  }
+
+  .try-copilot-btn {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1300px) {
+  body {
+    background-color: darkblue;
+  }
+
+  .sign-up {
+    display: flex;
+    justify-content: center;
+  }
+  /* 
+  .sign-up-trypcopilot button {
+    width: 300px;
+  } */
 }
