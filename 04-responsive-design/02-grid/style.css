@@ -1,0 +1,26 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.card {
+  color: whitesmoke;
+  background-color: peachpuff;
+  border: 1px solid black;
+  height: 100px;
+}
+
+.card:nth-child(odd) {
+  background-color: darkslategray;
+}
+.card:nth-child(even) {
+  background-image: url("./steve-johnson-2v-JGRBjIqE-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.card img {
+  object-fit: cover;
+}
