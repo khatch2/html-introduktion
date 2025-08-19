@@ -5,8 +5,9 @@
   gap: 21px;
 
   /* grid-template-areas:
-    "card1 card3 card5"
-    "card4 card2 card6"; */
+    "card1 card2 card2"
+    "card3 card3 card4"
+    "card5 card6 card6"; */
 }
 .card-1 {
   grid-column: 1 / 2;
