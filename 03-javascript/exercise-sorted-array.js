@@ -8,6 +8,11 @@ const people = [
   { name: "Markus", location: "Göteborg", hobby: "Trädgård" },
 ];
 
+// Exempel på att hantera escape i strängar
+const citat = `Med mer övning\'s uppgifter blir det lättare`;
+
+console.log(citat);
+
 console.log("array:", people);
 
 const sortedLocation = [...people].sort((a, b) =>
