@@ -1,22 +1,13 @@
-:root {
-  --color-bg: #fefae0;
-  --color-text: #222222;
-  --color-div-text: #fefae0;
-  --color-border: #283618;
-  --color-odd: #606c38;
-  --color-even: #dda15e;
-}
-
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-}
 .container {
   display: grid;
-  gap: 0.8rem;
 
-  grid-template-columns: 130px 130px 130px;
-  grid-auto-rows: 80px;
+  grid-template-columns: 150px 150px 150px 150px;
+  grid-template-rows: 200px 200px 200px 200px;
+  /* grid-auto-rows: 80px; */
+
+  /* gap: 20px; */
+  row-gap: 16px;
+  column-gap: 30px;
 }
 
 div {
@@ -24,6 +15,21 @@ div {
   color: var(--color-div-text);
   padding: 0.3rem;
   border-radius: 0.8rem;
+
+  /* height: 50px; */
+}
+
+.box-1 {
+  grid-column: 1 / 5;
+}
+.box-2 {
+  grid-column: 1 / 5;
+}
+.box-3 {
+  grid-column: 1/ 2;
+}
+.box-4 {
+  grid-column: 2 / 5;
 }
 
 div:nth-child(even) {
