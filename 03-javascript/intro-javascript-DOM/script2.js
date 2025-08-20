@@ -5,7 +5,7 @@ const heroTitle = document.querySelector("#hero-title");
 heroTitle.textContent = "Första lektion JavaScript!";
 
 const description =
-  "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis illum tempore quaerat vero.";
+  "Lorem ipsum dolor.";
 
 // Det går även att uppdatera direkt utan variabel
 document.querySelector("#hero-title").textContent =
