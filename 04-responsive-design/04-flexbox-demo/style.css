@@ -1,5 +1,5 @@
 .placeholder-img {
-  width: 300px;
+  width: 40%;
   height: 200px;
   background-color: #222;
   border: 1px solid black;
@@ -25,6 +25,6 @@
   }
 
   .hero-div {
-    width: 300px;
+    max-width: 300px;
   }
 }
