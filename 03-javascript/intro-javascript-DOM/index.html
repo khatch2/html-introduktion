@@ -3,15 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Intro JavaScript DOM</title>
+    <title>Intro JavaScript</title>
     <script src="script1.js"></script>
     <script src="script2.js" defer></script>
   </head>
   <body>
     <main>
       <section id="hero-section">
-        <h1 id="hero-title">This is the hero-title H1</h1>
+        <h2 id="hero-title"></h2>
       </section>
     </main>
+
+    <script>
+      // Spara hero title i variabel för återanvänding
+      const heroSection = document.querySelector("#hero-section");
+
+      const heroTitle = document.querySelector("#hero-title");
+      heroTitle.textContent = "Första lektion JavaScript!";
+    </script>
   </body>
 </html>
