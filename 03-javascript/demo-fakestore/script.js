@@ -17,8 +17,7 @@ async function init() {
 init();
 
 function renderData(products) {
-  //
-  console.log(products[0]);
+  //   console.log(products[0]);
 
   const heroSection = document.querySelector(".hero-section");
 
@@ -38,10 +37,20 @@ function renderData(products) {
   heroPrice.textContent = products[0].price;
   heroBtn.textContent = "Läs mer";
 
-  console.log(heroImg);
+  // products list
+  const productSection = document.querySelector(".products");
+  const list = productSection.querySelector("ul");
+
+  //   console.log(list);
 
   products.map((product) => {
-    console.log(product.title);
+    const productList = document.createElement("li");
+
+    productList.innerHTML = product.title + " <a href='/produkt/1'>läs mer</a>";
+
+    // console.log(productList);
+
+    list.appendChild(productList);
   });
 }
 
