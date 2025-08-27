@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Johan Hellberg",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^11.1.0"
+  }
 }
