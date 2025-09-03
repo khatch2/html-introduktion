@@ -30,6 +30,7 @@ function FormInput() {
 
   return (
     <>
+  
       <h2>Formulär</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Namn:</label><br />
@@ -41,6 +42,7 @@ function FormInput() {
           value={name}
           onChange={e => setName(e.target.value)}
         /><br />
+        <p>{name}</p>
         <label htmlFor="comment">Kommentar:</label><br />
         <textarea
           id="comment"

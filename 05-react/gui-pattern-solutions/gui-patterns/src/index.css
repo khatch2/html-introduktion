@@ -17,3 +17,7 @@ button {
 button:disabled {
   background-color: blue;
 }
+button:hover {
+  background-color: whitesmoke;
+  color: #333;
+}
