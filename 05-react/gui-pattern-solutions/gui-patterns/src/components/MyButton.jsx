@@ -1,5 +1,5 @@
 function MyButton() {
-  return <button>hej</button>;
+  return <button className="minknapp">hej</button>;
 }
 
 export default MyButton;

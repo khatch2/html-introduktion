@@ -8,16 +8,16 @@ Knapp som har följande egenskaper
 - Vid hover, invertera färgerna
  */
 
-button {
+.minknapp {
   padding: 1rem 2rem;
   background-color: #333;
   color: whitesmoke;
 }
 
-button:disabled {
+.minknapp:disabled {
   background-color: blue;
 }
-button:hover {
+.minknapp:hover {
   background-color: whitesmoke;
   color: #333;
 }

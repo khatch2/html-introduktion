@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      {/* <MyButton /> */}
+      <MyButton />
       {/* <FormInput /> */}
       <ShowAndHide />
     </>
