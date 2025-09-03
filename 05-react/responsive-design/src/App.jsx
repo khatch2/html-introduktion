@@ -1,5 +1,6 @@
 import './App.css'
 import FlexBoxRow from './components/FlexBoxRow'
+import GridLayout from './components/GridLayout'
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <h1>Responsive Design</h1>
       <FlexBoxRow />
+      <GridLayout />
     </>
   )
 }
