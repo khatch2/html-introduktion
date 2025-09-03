@@ -1,19 +1,31 @@
+const links = [
+  {href: "#testimonial", name: "Feature" },
+  {href: "#friends", name: "Friends" },
+  {href: "#signup-form", name: "Sign up!" },
+];
+
+const imageSrc = "https://github.com/JohanCodeForFun/algorithms-and-data-structures/blob/main/freecodecamp/ResponsiveWebDesign/product-landing-page/images/ducky-crop-104x48.png?raw=true";
+
 function Header() {
   return ( 
   <header id="header">
       <nav id="nav-bar">
         <img
-          class="logo"
-          src="https://github.com/JohanCodeForFun/algorithms-and-data-structures/blob/main/freecodecamp/ResponsiveWebDesign/product-landing-page/images/ducky-crop-104x48.png?raw=true"
+          className="logo"
+          src={imageSrc}
           height="72"
           width="auto"
           alt=""
           id="header-img"
         />
-        <ul class="nav-link-container">
-          <li><a class="nav-link" href="#testimonial">Feature</a></li>
-          <li><a class="nav-link" href="#friends">Friends</a></li>
-          <li><a class="nav-link" href="#signup-form">Sign up!</a></li>
+        <ul className="nav-link-container">
+          {links.map((link, index) => {
+            const {href, name} = link;
+
+            return (
+              <li key={index}><a className="nav-link" href={href}>{name}</a></li>
+            )}
+          )}
         </ul>
       </nav>
     </header>
