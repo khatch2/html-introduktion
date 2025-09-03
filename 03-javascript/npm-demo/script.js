@@ -1,17 +1,17 @@
 import uuidv4 from "./node_modules/uuid/dist/esm-browser/v4.js";
+// const people = [{ name: "Anna" }, { name: "Björn" }, { name: "Celise" }];
 
-const people = [{ name: "Anna" }, { name: "Björn" }, { name: "Celise" }];
+const data = fetch("https://jsonplaceholder.typicode.com/posts")
+  .then((response) => response.json())
+  .then((json) => console.log(json));
 
-console.log(people);
+function addFavoriteExercise() {
+  // function för att slumpa fram övning
+}
 
-console.log(uuidv4());
-console.log(uuidv4());
-console.log(uuidv4());
-console.log(uuidv4());
-console.log(uuidv4());
-
-const peopleWithIds = people.map((person) => ({
+const peopleWithIds = data.map((person) => ({
   ...person,
+  favoriteWorkout: addFavoriteExercise(),
   id: uuidv4(),
 }));
 
