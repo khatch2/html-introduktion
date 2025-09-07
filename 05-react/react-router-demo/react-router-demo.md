@@ -1,6 +1,16 @@
-##### 💻 Demo-App (React + React Router)
+# 💻 Demo-App (React + React Router)
 
 > Obs: Exempel i detta avsnitt använder Data Router-API:er (loaders/actions). Dessa funktioner finns i React Router 6.4 och senare — kontrollera din installerade version.
+
+## Starta projektet
+
+#### Öppna terminal i projektmappen
+
+skriv:
+
+- `npm init -y`
+- `npm install react react-dom react-router-dom@^6.4`
+- `npm install -D vite`
 
 #### Projektstruktur
 
@@ -47,8 +57,6 @@ createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
 );
 ```
-
-<!-- _class: no-footer -->
 
 ---
 
