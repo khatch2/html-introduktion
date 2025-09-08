@@ -20,11 +20,12 @@ app.use(cors());
 let counterHello = 0;
 
 app.get("/api/hello", (req, res) => {
+  let msg = "Hello World!";
   // counterHello = counterHello + 1;
   counterHello++;
 
   console.log(new Date().toUTCString(), "request to: /api/hello", counterHello);
-  res.send("Hello World!");
+  res.send({ msg, counterHello });
 });
 
 let counterProductListings = 0;

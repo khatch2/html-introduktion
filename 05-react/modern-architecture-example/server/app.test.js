@@ -13,7 +13,11 @@ describe("GET /api/hello", () => {
     const expectedMsg = "Hello World!";
 
     const res = await request(app).get("/api/hello");
+
     const data = JSON.parse(res.text);
+
+    console.log("response:", res.text);
+    console.log("data:", data);
 
     expect(data).toBeTruthy();
     expect(data).toHaveProperty("msg");
@@ -22,25 +26,19 @@ describe("GET /api/hello", () => {
   });
 
   it("responds correct numer of counter for requests", async () => {
-    const res1 = await request(app).get("/api/hello");
-    const data1 = JSON.parse(res1.text);
+    const baseRes = await request(app).get("/api/hello");
+    const counter = baseRes.body.counterHello;
 
-    expect(data1).toBeTruthy();
-    expect(data1).toHaveProperty("counterHello");
-    expect(data1.counterHello).toBe(3);
+    console.log("POW", counter);
 
-    const res2 = await request(app).get("/api/hello");
-    const data2 = JSON.parse(res2.text);
+    // gör tre anrop
+    for (let i = 1; i <= 3; i++) {
+      const res = await request(app).get("/api/hello");
+      const data = JSON.parse(res.text);
 
-    expect(data2).toBeTruthy();
-    expect(data2).toHaveProperty("counterHello");
-    expect(data2.counterHello).toBe(4);
-
-    const res3 = await request(app).get("/api/hello");
-    const data3 = JSON.parse(res3.text);
-
-    expect(data3).toBeTruthy();
-    expect(data3).toHaveProperty("counterHello");
-    expect(data3.counterHello).toBe(5);
+      expect(data).toBeTruthy();
+      expect(data).toHaveProperty("counterHello");
+      expect(data.counterHello).toBe(counter + i);
+    }
   });
 });
