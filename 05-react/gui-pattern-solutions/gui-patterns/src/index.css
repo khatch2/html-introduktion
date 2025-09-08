@@ -1,0 +1,23 @@
+/* 
+GUI Patterns – Övning 1
+Knapp som har följande egenskaper
+- Padding runt om, mer på bredden än höjden
+- Bakgrundsfärgen är mörk
+- Texten på knappen är ljus
+- Ange styling för disabled knapp¯
+- Vid hover, invertera färgerna
+ */
+
+.minknapp {
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: whitesmoke;
+}
+
+.minknapp:disabled {
+  background-color: blue;
+}
+.minknapp:hover {
+  background-color: whitesmoke;
+  color: #333;
+}

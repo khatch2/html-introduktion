@@ -1,0 +1,12 @@
+.layout {
+  display: grid;
+
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 500px) {
+  .layout {
+    grid-template-columns: 1fr 1fr;
+    background-color: lightgreen;
+  }
+}

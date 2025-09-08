@@ -1,0 +1,13 @@
+.minknapp {
+  padding: 1rem 2rem;
+  background-color: green;
+  color: whitesmoke;
+}
+
+.minknapp:disabled {
+  background-color: blue;
+}
+.minknapp:hover {
+  background-color: whitesmoke;
+  color: #333;
+}
