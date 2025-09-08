@@ -1,13 +1,13 @@
 // Bygg en “Hello World”-server i Node.js & Express
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
+app.use(cors());
+
+app.get("/api/hello", (req, res) => {
   res.send("Hello World!");
-});
-app.get("/min-endpoint", (req, res) => {
-  res.send("Min nya endpoint");
 });
 
 app.listen(port, () => {
