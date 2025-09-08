@@ -10,11 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "supertest": "^7.1.4"
+    "express": "^5.1.0"
   },
   "description": "",
   "devDependencies": {
+    "supertest": "^7.1.4",
     "vitest": "^3.2.4"
   }
 }
