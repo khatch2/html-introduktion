@@ -5,7 +5,7 @@ const port = 3000;
 const url = "http://localhost:";
 const path = "/api/hello";
 
-const urlPath = "http://localhost:3000/api/hello"
+// const urlPath = "http://localhost:3000/api/hello"
 
 console.log("url path:", `${url}${port}${path}`);
 

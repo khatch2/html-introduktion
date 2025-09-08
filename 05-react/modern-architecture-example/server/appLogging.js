@@ -1,4 +1,8 @@
 // Bygg en “Hello World”-server i Node.js & Express
+const express = require("express");
+const cors = require("cors");
+const app = express();
+const port = 3000;
 
 // Fortsätt utveckla tidigare Node.js / Express app:
 // 1. Lägg till enkel console.log i API:et för att se när anrop görs.
@@ -10,41 +14,55 @@
 // 6. Diskutera:
 // varför vill man ha metrics och traces i produktion?
 
-const express = require("express");
-const cors = require("cors");
-const app = express();
-const port = 3000;
-
 app.use(cors());
 
 let counterHello = 0;
 
 app.get("/api/hello", (req, res) => {
-  counterHello++;
+  counterHello = counterHello + 1;
 
-  console.log(new Date().toUTCString(), "request to: /api/hello", counterHello);
+  console.log(new Date().toUTCString(), "request /api/hello", counterHello);
+
   res.send("Hello World!");
 });
-
-let counterProductListings = 0;
+let counterListProducts = 0;
 
 app.get("/api/products", (req, res) => {
-  counterProductListings++;
+  counterListProducts = counterListProducts + 1;
 
   console.log(
     new Date().toUTCString(),
-    "request to: /api/products",
-    counterProductListings
+    "request /api/products",
+    counterListProducts
   );
 
-  res.send("Vi har dem här produkterna i lager...");
+  res.send("Hello World!");
+});
+let counterBounceRate = 0;
+let newUsers = 0;
+
+app.get("/api/register", (req, res) => {
+  counterBounceRate = counterBounceRate + 1;
+
+  console.log(
+    new Date().toUTCString(),
+    "request /api/register",
+    counterBounceRate
+  );
+
+  res.send("Hello World!");
 });
 
-app.get("/stats", (req, res) => {
-  res.send({
-    counterProductListings: counterProductListings + 10,
+app.get("/api/requests", (req, res) => {
+  const totalRequests = counterHello + counterListProducts + counterBounceRate;
+  console.log("total reqests for API: ", {
+    totalRequests,
     counterHello,
+    counterListProducts,
+    counterBounceRate,
   });
+
+  res.send(`total reqests for API: ${totalRequests}`);
 });
 
 app.listen(port, () => {
