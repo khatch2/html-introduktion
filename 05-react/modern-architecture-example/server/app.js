@@ -20,6 +20,7 @@ app.use(cors());
 let counterHello = 0;
 
 app.get("/api/hello", (req, res) => {
+  // counterHello = counterHello + 1;
   counterHello++;
 
   console.log(new Date().toUTCString(), "request to: /api/hello", counterHello);
