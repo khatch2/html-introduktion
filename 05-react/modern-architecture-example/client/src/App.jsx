@@ -1,6 +1,5 @@
 // ...existing code...
 import { useEffect, useState } from 'react';
-import Header from './components/header';
 import Hero from './components/Hero';
 import Articles from './components/Articles';
 import Services from './components/Services';
@@ -39,7 +38,6 @@ function App() {
     <>
       {/* {data ? <p>{data}</p> : <p>Loading...</p> } */}
       <div className="hero-wrapper">
-        <Header />
 
         <Hero />
       </div>
@@ -52,9 +50,6 @@ function App() {
   <Cta />
       </main>
 
-      <footer>
-        <p>Skapad av Johan Hellberg 2024 &copy;</p>
-      </footer>
     </>
   );
 }
