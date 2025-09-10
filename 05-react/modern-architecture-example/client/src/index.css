@@ -8,6 +8,14 @@
   --orange: #be6321; /* Accent color */
 }
 
+.modal {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  z-index: 9000;
+  transform: translate(-50%, -50%);
+}
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -357,3 +365,37 @@ footer {
     padding-top: 18rem;
   }
 }
+
+/* Modern modal styles */
+.modal-modern {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.modal-modern.is-open {
+  display: flex;
+}
+.modal-modern__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+.modal-modern__dialog {
+  position: relative;
+  background: var(--white);
+  padding: 1.5rem;
+  width: min(720px, 94%);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transform: translateY(-6px);
+  z-index: 1;
+}
+.modal-modern .button--close {
+  position: absolute;
+  right: 0.6rem;
+  top: 0.6rem;
+}
+

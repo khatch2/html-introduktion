@@ -1,9 +1,13 @@
-function Hero() {
+function Hero({ setShowModalPlaning }) {
+    function handleClick () {
+    setShowModalPlaning(prev => !prev)
+  }
+
   return ( 
     <section className="hero">
       <h1>Elektriker Jansson</h1>
       <p>Din pålitliga partner för alla elarbeten</p>
-      <a className="button button--cta" href="tjanster.html">BÖRJA DIN PLANERING</a>
+      <button className="button button--cta" onClick={handleClick}>BÖRJA DIN PLANERING</button>
     </section>
   );
 }

@@ -18,6 +18,7 @@ async function fetchData () {
 
 function Home() {
   const [data, setData] = useState(null);
+  const [showModalPlaning, setShowModalPlaning] = useState(false);
 
   const getData = async () => {
     try {
@@ -39,7 +40,9 @@ function Home() {
       {data ? <p>{data}</p> : <p>Loading...</p> }
       <div className="hero-wrapper">
 
-        <Hero />
+        <Hero
+        setShowModalPlaning={setShowModalPlaning}
+        />
       </div>
 
       <main>
@@ -50,8 +53,10 @@ function Home() {
         <Cta />
       </main>
 
-      <ModalPlaning />
-
+      <ModalPlaning
+        showModalPlaning={showModalPlaning}
+        setShowModalPlaning={setShowModalPlaning}
+      />
     </>
   );
 }
