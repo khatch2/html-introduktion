@@ -1,9 +1,9 @@
 // ...existing code...
 import { useEffect, useState } from 'react';
-import Hero from './components/Hero';
-import Articles from './components/Articles';
-import Services from './components/Services';
-import Cta from './components/Cta';
+import Hero from '../components/Hero';
+import Articles from '../components/Articles';
+import Services from '../components/Services';
+import Cta from '../components/Cta';
 
 const port = 3000;
 const url = "http://localhost:";
@@ -15,7 +15,7 @@ async function fetchData () {
   return data;
 }
 
-function App() {
+function Home() {
   const [data, setData] = useState(null);
 
   const getData = async () => {
@@ -44,13 +44,13 @@ function App() {
       <main>
         <section className="hero-livingroom" />
 
-  <Articles />
-  <Services />
-  <Cta />
+        <Articles />
+        <Services />
+        <Cta />
       </main>
 
     </>
   );
 }
 
-export default App;
+export default Home;

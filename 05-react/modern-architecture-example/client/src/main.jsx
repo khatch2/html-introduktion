@@ -2,9 +2,9 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router';
 import './index.css'
-import App from './App.jsx'
-import Hello from './components/Hello.jsx';
-import About from './components/About.jsx';
+import Home from './pages/Home.jsx'
+import Hello from './pages/Hello.jsx';
+import About from './pages/About.jsx';
 import RootLayout from './layout/RootLayout.jsx';
 
 createRoot(document.getElementById('root')).render(
@@ -12,7 +12,7 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<RootLayout />}>
-          <Route index element={<App />} />
+          <Route index element={<Home />} />
           <Route path='/om-oss' element={<About />} />
           <Route path='/hello/:name' element={<Hello />} />
         </Route>
