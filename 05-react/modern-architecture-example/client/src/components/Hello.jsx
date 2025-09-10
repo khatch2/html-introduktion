@@ -1,5 +1,9 @@
+import { useParams } from "react-router";
+
 function Hello() {
-  return ( <h1>Hej på dig :)</h1> );
+  let { name } = useParams();
+
+  return ( <h1>Hej på dig, {name} :)</h1> );
 }
 
 export default Hello;

@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import Articles from './components/Articles';
 import Services from './components/Services';
 import Cta from './components/Cta';
-import './App.css';
 
 const port = 3000;
 const url = "http://localhost:";

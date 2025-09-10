@@ -14,7 +14,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/' element={<RootLayout />}>
           <Route index element={<App />} />
           <Route path='/om-oss' element={<About />} />
-          <Route path='/hello' element={<Hello />} />
+          <Route path='/hello/:name' element={<Hello />} />
         </Route>
       </Routes>
     </BrowserRouter>
