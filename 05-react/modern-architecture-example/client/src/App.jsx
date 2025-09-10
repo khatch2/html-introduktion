@@ -31,7 +31,8 @@ function App() {
   };
 
   useEffect(() => {
-    getData();
+    // getData();
+    console.log("hej en gång!")
   }, []);
 
   return (
