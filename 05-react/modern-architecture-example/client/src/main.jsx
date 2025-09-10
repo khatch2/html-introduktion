@@ -15,6 +15,7 @@ createRoot(document.getElementById('root')).render(
           <Route index element={<Home />} />
           <Route path='/om-oss' element={<About />} />
           <Route path='/hello/:name' element={<Hello />} />
+          <Route path='*' element={<section><h1>Sidan hittades inte.</h1></section>} />
         </Route>
       </Routes>
     </BrowserRouter>

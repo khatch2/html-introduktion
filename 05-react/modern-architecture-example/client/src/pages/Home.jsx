@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import Articles from '../components/Articles';
 import Services from '../components/Services';
 import Cta from '../components/Cta';
+import ModalPlaning from '../components/ModalPlaning';
 
 const port = 3000;
 const url = "http://localhost:";
@@ -29,13 +30,13 @@ function Home() {
   };
 
   useEffect(() => {
-    // getData();
+    getData();
     console.log("hej en gång!")
   }, []);
 
   return (
     <>
-      {/* {data ? <p>{data}</p> : <p>Loading...</p> } */}
+      {data ? <p>{data}</p> : <p>Loading...</p> }
       <div className="hero-wrapper">
 
         <Hero />
@@ -48,6 +49,8 @@ function Home() {
         <Services />
         <Cta />
       </main>
+
+      <ModalPlaning />
 
     </>
   );
