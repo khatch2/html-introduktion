@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition: Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <header>
+        <h1>Transition</h1>
+        <button
+          class="hamburger"
+          aria-label="Meny"
+          aria-controls="mobile-nav"
+          aria-expanded="false"
+        >
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+        </button>
+        <nav id="mobile-nav" class="mobile-nav" hidden>
+          <ul>
+            <li><a href="#">Hem</a></li>
+            <li><a href="#">Om oss</a></li>
+            <li><a href="#">Tjänster</a></li>
+            <li><a href="#">Kontakt</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="box-container">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+      </div>
+    </section>
+    <script src="./script.js" defer></script>
+  </body>
+</html>
