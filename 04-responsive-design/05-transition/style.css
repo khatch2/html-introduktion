@@ -42,6 +42,9 @@ header {
   border: 0;
   padding: 0;
   cursor: pointer;
+
+  /* Anchor this element so we can position the menu relative to it */
+  anchor-name: --burger;
 }
 .hamburger .bar {
   display: block;
@@ -84,4 +87,27 @@ header {
 .mobile-nav a {
   text-decoration: none;
   color: #222;
+}
+
+/* Position the mobile menu directly under the hamburger using CSS Anchor Positioning */
+@supports (position-anchor: --x) {
+  header {
+    position: relative;
+  }
+  .mobile-nav {
+    position: absolute;
+    position-anchor: --burger;
+    top: anchor(bottom);
+    right: anchor(left);
+    margin-top: 0.5rem;
+    z-index: 10;
+    /* Provide a sensible width; override to fit content */
+    min-width: 130px;
+  }
+  /* If anchor-size is supported, match the button's width */
+  @supports (width: anchor-size(width)) {
+    .mobile-nav {
+      width: anchor-size(width);
+    }
+  }
 }
