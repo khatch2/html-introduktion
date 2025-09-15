@@ -6,7 +6,7 @@ Skapa en ny Express-app:
 
 ```bash
 npm init -y
-npm i express helmet body-parser bcrypt
+npm i express helmet bcrypt escape-html
 ```
 
 **server.js**
@@ -14,10 +14,10 @@ npm i express helmet body-parser bcrypt
 ```js
 import express from "express";
 import helmet from "helmet";
-import bodyParser from "body-parser";
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(helmet()); // bra default-skydd
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Här kommer övningarna att läggas in
@@ -32,6 +32,8 @@ app.listen(3001, () => console.log("Server på http://localhost:3001"));
 **Kod**
 
 ```js
+import escapeHtml from "escape-html";
+
 app.get("/echo", (req, res) => {
   const input = req.query.msg || "";
   res.send(`<h1>${input}</h1>`);
@@ -46,7 +48,13 @@ http://localhost:3001/echo?msg=<script>alert(1)</script>
 
 → En popup körs i webbläsaren.
 
-**Fix:** Använd alltid escaping, t.ex. `res.send(escapeHtml(input))` eller ett templating-bibliotek som skyddar automatiskt.
+**Fix:** Använd alltid escaping, t.ex.:
+
+```js
+res.send(`<h1>${escapeHtml(input)}</h1>`);
+```
+
+eller ett templating-bibliotek som skyddar automatiskt.
 
 ---
 
@@ -72,7 +80,6 @@ Skapa en fil `attacker.html` med:
 **Fix**
 
 ```js
-import helmet from "helmet";
 app.use(helmet.frameguard({ action: "deny" }));
 ```
 
@@ -97,12 +104,17 @@ app.post("/transfer", (req, res) => {
 Skapa en fil `evil.html` med:
 
 ```html
-<img src="http://localhost:3001/transfer" />
+<form id="csrf" action="http://localhost:3001/transfer" method="POST">
+  <input type="hidden" name="amount" value="10" />
+</form>
+<script>
+  document.getElementById("csrf").submit();
+</script>
 ```
 
 → När sidan öppnas körs en POST automatiskt.
 
-**Fix:** Använd CSRF-tokens (paket som `csurf`) i riktiga appar.
+**Fix:** Använd CSRF-tokens (paket som `csurf`), SameSite-cookies och gör aldrig state-ändrande operationer via GET.
 
 ---
 
@@ -125,25 +137,31 @@ app.get("/login", (req, res) => {
 http://localhost:3001/login?user=alice&pass=' OR '1'='1
 ```
 
-→ Ger “true” i SQL.
+→ Ger en SQL som alltid blir sann.
 
-**Fix:** Använd **parametriserade queries** i riktiga databaser.
+**Fix:** Använd **parametriserade queries** och hasha lösenord.
 
 ### Exempel på lösning:
 
-```javascript
-// fetch user (pg)
+```js
 import pg from "pg";
+import bcrypt from "bcrypt";
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 
 app.get("/login", async (req, res) => {
   const { user, pass } = req.query;
   try {
     const { rows } = await pool.query(
-      "SELECT id, username FROM users WHERE username = $1 AND password_hash = $2",
-      [user, passHash(pass)] // skicka redan hashad lösenord
+      "SELECT id, username, password_hash FROM users WHERE username = $1",
+      [user]
     );
-    res.json(rows);
+    const u = rows[0];
+    if (!u) return res.status(401).send("Fel användarnamn eller lösenord");
+
+    const ok = await bcrypt.compare(pass, u.password_hash);
+    if (!ok) return res.status(401).send("Fel användarnamn eller lösenord");
+
+    res.json({ id: u.id, username: u.username });
   } catch (err) {
     res.status(500).send("Server error");
   }
@@ -180,8 +198,8 @@ curl -X POST http://localhost:3001/register \
 
 # ✅ Sammanfattning
 
-- **XSS:** Input måste saneras.
+- **XSS:** Input måste saneras (`escapeHtml` eller templating).
 - **Clickjacking:** Skydda med headers (`helmet.frameguard`).
-- **CSRF:** Använd tokens för att skydda formulär.
-- **SQL Injection:** Använd parametriserade queries.
+- **CSRF:** Skydda POST-requests med tokens.
+- **SQL Injection:** Använd parametriserade queries och jämför lösenord med `bcrypt.compare`.
 - **Lösenord:** Alltid hashning (bcrypt), aldrig klartext.

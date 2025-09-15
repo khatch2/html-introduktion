@@ -1,0 +1,113 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0 1rem;
+}
+
+.box-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+
+  background-color: blue;
+  border: 1px solid black;
+
+  transition: 1s;
+  rotate: 90;
+}
+
+.box:hover {
+  background-color: aquamarine;
+}
+
+/* Hamburger menu demo */
+.hamburger {
+  --bar-w: 28px;
+  --bar-h: 3px;
+  --gap: 6px;
+  --dur: 300ms;
+  width: var(--bar-w);
+  height: calc(var(--bar-h) * 3 + var(--gap) * 2);
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+
+  /* Anchor this element so we can position the menu relative to it */
+  anchor-name: --burger;
+}
+.hamburger .bar {
+  display: block;
+  width: 100%;
+  height: var(--bar-h);
+  background: #222;
+  border-radius: 2px;
+  transition: transform var(--dur) ease, opacity var(--dur) ease;
+}
+.hamburger.is-active .bar:nth-child(1) {
+  transform: translateY(calc(var(--bar-h) + var(--gap))) rotate(45deg);
+}
+.hamburger.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-active .bar:nth-child(3) {
+  transform: translateY(calc(-1 * (var(--bar-h) + var(--gap)))) rotate(-45deg);
+}
+
+.mobile-nav {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 300ms ease;
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin: 0.5rem 0 1rem;
+}
+.mobile-nav.open {
+  max-height: 300px; /* big enough to reveal content */
+}
+.mobile-nav ul {
+  list-style: none;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.mobile-nav a {
+  text-decoration: none;
+  color: #222;
+}
+
+/* Position the mobile menu directly under the hamburger using CSS Anchor Positioning */
+@supports (position-anchor: --x) {
+  header {
+    position: relative;
+  }
+  .mobile-nav {
+    position: absolute;
+    position-anchor: --burger;
+    top: anchor(bottom);
+    right: anchor(left);
+    margin-top: 0.5rem;
+    z-index: 10;
+    /* Provide a sensible width; override to fit content */
+    min-width: 130px;
+  }
+  /* If anchor-size is supported, match the button's width */
+  @supports (width: anchor-size(width)) {
+    .mobile-nav {
+      width: anchor-size(width);
+    }
+  }
+}
