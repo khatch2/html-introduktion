@@ -18,12 +18,16 @@ header {
   background-color: blue;
   border: 1px solid black;
 
-  transition: 1s ease-in-out;
-  transform: rotate(90deg);
+  transition: background-color 0.3s ease-in-out, transform 3s ease;
+  rotate: 5deg;
 }
 
 .box:hover {
+  width: 100px;
+  height: 100px;
+
   transform: rotate(180deg);
+
   background-color: aquamarine;
 }
 
@@ -32,7 +36,7 @@ header {
   --bar-w: 28px;
   --bar-h: 3px;
   --gap: 6px;
-  --dur: 300ms;
+  --dur: 3000ms;
   width: var(--bar-w);
   height: calc(var(--bar-h) * 3 + var(--gap) * 2);
   display: inline-flex;
