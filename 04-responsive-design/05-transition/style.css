@@ -35,6 +35,9 @@ header {
 
   transform: rotate(180deg);
 
+  /* add example on cubic-bezier */
+  transform: cubic-bezier(0.42, 0, 0.45, 1.72);
+
   background-color: aquamarine;
   color: black;
 }
