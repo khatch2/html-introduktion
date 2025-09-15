@@ -18,11 +18,12 @@ header {
   background-color: blue;
   border: 1px solid black;
 
-  transition: 1s;
-  rotate: 90;
+  transition: 1s ease-in-out;
+  transform: rotate(90deg);
 }
 
 .box:hover {
+  transform: rotate(180deg);
   background-color: aquamarine;
 }
 
