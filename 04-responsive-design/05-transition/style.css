@@ -19,13 +19,19 @@ header {
   background-color: blue;
   border: 1px solid black;
 
-  transition: background-color 0.3s ease-in-out, transform 3s ease;
+  transition: background-color 0.3s ease-in-out, transform 3s ease,
+    opacity 1s ease;
+
+  /* se skillnad på enstaka transitions alt generellt på alla */
+  transition: 1s ease;
   rotate: 5deg;
 }
 
 .box:hover {
   width: 100px;
   height: 100px;
+
+  opacity: 0;
 
   transform: rotate(180deg);
 
