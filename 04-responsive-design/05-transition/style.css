@@ -15,6 +15,7 @@ header {
   width: 200px;
   height: 100px;
 
+  color: white;
   background-color: blue;
   border: 1px solid black;
 
@@ -29,6 +30,7 @@ header {
   transform: rotate(180deg);
 
   background-color: aquamarine;
+  color: black;
 }
 
 /* Hamburger menu demo */
