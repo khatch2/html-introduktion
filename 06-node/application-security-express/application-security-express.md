@@ -114,7 +114,7 @@ Skapa en fil `evil.html` med:
 
 → När sidan öppnas körs en POST automatiskt.
 
-**Fix:** Använd CSRF-tokens (paket som `csurf`), SameSite-cookies och gör aldrig state-ändrande operationer via GET.
+**Fix:** Använd CSRF-tokens (paket som `csrf-csrf`), SameSite-cookies och gör aldrig state-ändrande operationer via GET.
 
 ---
 
