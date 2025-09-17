@@ -91,7 +91,7 @@ app.post("/reset-balance", (_req, res) => {
 // </form>
 // <script>document.getElementById('csrf').submit();</script>
 
-// Riktig fix i produktion: CSRF-tokens (t.ex. csurf), SameSite-cookies, och aldrig state-ändring via GET.
+// Riktig fix i produktion: CSRF-tokens (t.ex. csrf-csrf), SameSite-cookies, och aldrig state-ändring via GET.
 
 // ============================================================
 // DEMO 4 — SQL Injection (utan riktig DB, konceptuellt)

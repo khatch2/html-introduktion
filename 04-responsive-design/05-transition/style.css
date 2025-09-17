@@ -15,16 +15,31 @@ header {
   width: 200px;
   height: 100px;
 
+  color: white;
   background-color: blue;
   border: 1px solid black;
 
-  transition: 1s ease-in-out;
-  transform: rotate(90deg);
+  transition: background-color 0.3s ease-in-out, transform 3s ease,
+    opacity 1s ease;
+
+  /* se skillnad på enstaka transitions alt generellt på alla */
+  transition: 1s ease;
+  rotate: 5deg;
 }
 
 .box:hover {
+  width: 100px;
+  height: 100px;
+
+  opacity: 0;
+
   transform: rotate(180deg);
+
+  /* add example on cubic-bezier */
+  transform: cubic-bezier(0.42, 0, 0.45, 1.72);
+
   background-color: aquamarine;
+  color: black;
 }
 
 /* Hamburger menu demo */
@@ -32,7 +47,7 @@ header {
   --bar-w: 28px;
   --bar-h: 3px;
   --gap: 6px;
-  --dur: 300ms;
+  --dur: 3000ms;
   width: var(--bar-w);
   height: calc(var(--bar-h) * 3 + var(--gap) * 2);
   display: inline-flex;
