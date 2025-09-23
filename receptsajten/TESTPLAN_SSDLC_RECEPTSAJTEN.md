@@ -11,6 +11,7 @@ Detta dokument beskriver hur vi säkerställer kvalitet och säkerhet i frontend
 - [ ] CI kör:
   - [ ] lint
   - [ ] `npm audit` (inga high/critical blocker)
+  - [ ] semgrep körs och skapar analys rapport
   - [ ] Tester enligt krav
 - [ ] Localhost skannad med ZAP baseline (inga high)
 - [ ] Åtgärda eller förstå medium & low varningar
