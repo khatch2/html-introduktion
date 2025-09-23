@@ -23,7 +23,7 @@ Detta dokument beskriver hur vi säkerställer kvalitet och säkerhet i frontend
 
    - **XSS / Injection (A03)** → all data från API & URL kan vara skadlig.
    - **Security Misconfiguration (A05)** → felaktiga headers (CSP, CORS).
-   - **Broken Authentication/Session (A07)** → hantering av tokens/cookies i frontend.
+   - **A08 (Software & Data Integrity Failures)** → beroenden/3:e-parts-skript kan manipuleras; använd audit & CSP för att säkra leveranskedjan
 
 2. **STRIDE – bara tillämpa på inputs (de största attackytorna):**
 
