@@ -1,6 +1,6 @@
 # Testplan & SSDLC – Slutprojekt Receptsajten
 
-Detta dokument beskriver hur vi säkerställer kvalitet och säkerhet i frontend-projektet **Receptsajten** (React + API från backend-teamet).
+Detta dokument beskriver hur vi säkerställer kvalitet och säkerhet i frontend-projektet **Receptsajten** (React + API från backend-teamet)
 
 ## Definition of Done (SSDLC-minimum)
 
