@@ -7,6 +7,7 @@ Detta dokument beskriver hur vi säkerställer kvalitet och säkerhet i frontend
 - [ ] Enkel Hot-analys + tillitgränser dokumenterade (OWASP TOP TEN & STRIDE framework)
 - [ ] Pull request blockerad tills:
   - [ ] Code review av en annan utvecklare
+  - [ ] Manuell testning av Projektledare för att säkerställa
   - [ ] Tester för kodsäkerhet har körts
 - [ ] CI kör:
   - [ ] lint
