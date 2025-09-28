@@ -1,0 +1,62 @@
+name: CodeQL
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  schedule:
+    - cron: "0 3 * * 0" # varje söndag 03:00
+
+# Avbryt äldre körningar för samma PR/branch
+concurrency:
+  group: codeql-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  analyze:
+    name: Analyze (JS/TS)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          # "javascript" täcker både JS och TS
+          languages: javascript
+          # Kör utökade säkerhets- och kvalitetsregler
+          queries: security-and-quality
+
+      # Bygg om nödvändigt för bättre semantisk analys (framförallt TS eller bundlade projekt)
+      - name: Install & build root (if present)
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+            npm run build --if-present
+          fi
+
+      - name: Install & build common subdirs (frontend + backend, if present)
+        run: |
+          set -e
+          for d in frontend client web app ui server api backend; do
+            if [ -f "$d/package.json" ]; then
+              echo "==> Building $d"
+              (cd "$d" && npm ci && npm run build --if-present)
+            fi
+          done
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
