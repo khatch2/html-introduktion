@@ -6,19 +6,21 @@ Detta dokument beskriver hur vi säkerställer kvalitet och säkerhet i frontend
 
 - [ ] Enkel Hot-analys + tillitgränser dokumenterade (OWASP TOP TEN & STRIDE framework)
 - [ ] Pull request blockerad tills:
-  - [ ] Code review av en annan utvecklare
-  - [ ] Manuell testning av Projektledare för att säkerställa
+  - [ ] Code review av en annan utvecklare för att säkerställa kod och säkerhetsstandard följs
+  - [ ] Manuell testning av Projektledare för att säkerställa feature och webb app fungerar som väntat
   - [ ] Tester för kodsäkerhet har körts
 - [ ] CI kör:
   - [ ] lint
   - [ ] `npm audit` (inga high/critical blocker)
-  - [ ] semgrep körs och skapar analys rapport
+  - [ ] sonarcube kopplat till repo för kod och säkerhets analys av utvecklingsteam och testare
   - [ ] Tester enligt krav
 - [ ] Localhost skannad med ZAP baseline (inga high)
 - [ ] Åtgärda eller förstå medium & low varningar
 - [ ] Incidentplan finns och kontaktväg testad
 
 ### Hotbildsanalys (80/20-variant)
+
+#### Exempel: 
 
 1. **OWASP Top 10 – filtrera fram 2–3 mest relevanta risker för frontend:**
 
