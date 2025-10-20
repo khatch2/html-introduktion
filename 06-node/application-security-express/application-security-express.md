@@ -9,6 +9,8 @@ npm init -y
 npm i express helmet bcrypt escape-html
 ```
 
+const port = 3001
+
 **server.js**
 
 ```js
@@ -22,7 +24,7 @@ app.use(express.json());
 
 // Här kommer övningarna att läggas in
 
-app.listen(3001, () => console.log("Server på http://localhost:3001"));
+app.listen(port, () => console.log(`Server på http://localhost:${port}`));
 ```
 
 ---
