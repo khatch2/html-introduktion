@@ -20,7 +20,7 @@ Detta dokument beskriver hur vi säkerställer kvalitet och säkerhet i frontend
 
 ### Hotbildsanalys (80/20-variant)
 
-#### Exempel: 
+#### Exempel:
 
 1. **OWASP Top 10 – filtrera fram 2–3 mest relevanta risker för frontend:**
 
@@ -48,7 +48,7 @@ Detta dokument beskriver hur vi säkerställer kvalitet och säkerhet i frontend
 ### Unit tests (ViTest)
 
 - [ ] `formatTime(minutes)` formatterar korrekt
-- [ ] `getIngredientCount(recipe)` räknar ingredienser
+- [ ] `getIngredientCount(recipe)` räknar ingredienser // har ni 5 test recept, ska 5 returneras
 - [ ] `filterRecipes(recipes, query)` filtrerar case-insensitive
 - [ ] `countByCategory(recipes)` returnerar korrekt `{kategori: antal}`
 - [ ] `<RecipeCard />` renderar namn, bild (alt), rating, ingrediensantal, tid
